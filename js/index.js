@@ -28,7 +28,7 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.getElementById('scan').addEventListener('click', this.scan, false);
-        document.getElementById('browse').addEventListener('click', this.browse, false);
+        //document.getElementById('browse').addEventListener('click', this.browse, false);
     },
     // deviceready Event Handler
     //
@@ -51,11 +51,21 @@ var app = {
     scan: function() {
         console.log('scanning');
         try {
-        window.plugins.barcodeScanner.scan(function(args) {
-            console.log(args);
-        });
+            window.plugins.barcodeScanner.scan(this.scanSuccess, function(error) {
+                console.log("Scanning failed: " + error);
+            });
         } catch (ex) {
             console.log(ex.message);
+        }
+    },
+    scanSuccess: function(args) {
+        console.log("We got a barcode\n" +
+          "Result: " + result.text + "\n" +
+          "Format: " + result.format + "\n" +
+          "Cancelled: " + result.cancelled);
+
+        if (result.format == "QR_CODE") {
+            window.plugins.childBrowser.showWebPage(result.text, { showLocationBar: false });
         }
     },
     browse: function() {
