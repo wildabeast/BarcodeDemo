@@ -51,7 +51,7 @@ var app = {
     scan: function() {
         console.log('scanning');
         try {
-            window.plugins.barcodeScanner.scan(this.scanSuccess, function(error) {
+            window.plugins.barcodeScanner.scan(app.scanSuccess, function(error) {
                 console.log("Scanning failed: " + error);
             });
         } catch (ex) {
@@ -63,6 +63,8 @@ var app = {
           "Result: " + result.text + "\n" +
           "Format: " + result.format + "\n" +
           "Cancelled: " + result.cancelled);
+
+        document.getElementById("output").innerHTML = result.text;
 
         if (result.format == "QR_CODE") {
             window.plugins.childBrowser.showWebPage(result.text, { showLocationBar: false });
