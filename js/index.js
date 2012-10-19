@@ -28,7 +28,6 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.getElementById('scan').addEventListener('click', this.scan, false);
-        //document.getElementById('browse').addEventListener('click', this.browse, false);
     },
     // deviceready Event Handler
     //
@@ -51,29 +50,19 @@ var app = {
     scan: function() {
         console.log('scanning');
         try {
-            window.plugins.barcodeScanner.scan(app.scanSuccess, function(error) {
-                console.log("Scanning failed: " + error);
-            });
-        } catch (ex) {
-            console.log(ex.message);
-        }
-    },
-    scanSuccess: function(args) {
-        console.log("We got a barcode\n" +
-          "Result: " + args.text + "\n" +
-          "Format: " + args.format + "\n" +
-          "Cancelled: " + args.cancelled);
+            window.plugins.barcodeScanner.scan(function(args) {
+                console.log("Scanner result: \n" +
+                    "text: " + args.text + "\n" +
+                    "format: " + args.format + "\n" +
+                    "cancelled: " + args.cancelled + "\n");
 
-        document.getElementById("output").innerHTML = args.text;
+                if (args.format == "QR_CODE") {
+                    window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
+                }
 
-        if (args.format == "QR_CODE") {
-            window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
-        }
-    },
-    browse: function() {
-        console.log('browsing');
-        try {
-            window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: true });
+                document.getElementById("info").innerHTML = args.text;
+                console.log(args);
+        });
         } catch (ex) {
             console.log(ex.message);
         }
