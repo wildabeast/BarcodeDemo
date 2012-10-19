@@ -83,7 +83,7 @@ h1 {
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
-    font-size:12px;
+    font-size:18px;
     margin:0px 30px;
     padding:2px 0px;
 }
@@ -111,4 +111,8 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+a {
+    font-size:24px;
 }
