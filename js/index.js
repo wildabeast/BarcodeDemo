@@ -60,14 +60,14 @@ var app = {
     },
     scanSuccess: function(args) {
         console.log("We got a barcode\n" +
-          "Result: " + result.text + "\n" +
-          "Format: " + result.format + "\n" +
-          "Cancelled: " + result.cancelled);
+          "Result: " + args.text + "\n" +
+          "Format: " + args.format + "\n" +
+          "Cancelled: " + args.cancelled);
 
-        document.getElementById("output").innerHTML = result.text;
+        document.getElementById("output").innerHTML = args.text;
 
-        if (result.format == "QR_CODE") {
-            window.plugins.childBrowser.showWebPage(result.text, { showLocationBar: false });
+        if (args.format == "QR_CODE") {
+            window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
         }
     },
     browse: function() {
