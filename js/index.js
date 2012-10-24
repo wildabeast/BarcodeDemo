@@ -55,11 +55,11 @@ var app = {
                     "text: " + args.text + "\n" +
                     "format: " + args.format + "\n" +
                     "cancelled: " + args.cancelled + "\n");
-
+                /*
                 if (args.format == "QR_CODE") {
                     window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
                 }
-
+                */
                 document.getElementById("info").innerHTML = args.text;
                 console.log(args);
         });
