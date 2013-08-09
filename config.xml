@@ -13,21 +13,22 @@
         PhoneGap Team
     </author>
 
-    <gap:plugin name="BarcodeScanner"/>
-    <!--
-    <gap:plugin name="ChildBrowser"/>
-    <gap:plugin name="GAPlugin"/>
-    <gap:plugin name="GenericPush"/>
-    <gap:plugin name="FacebookConnect"/>
-    -->
+    <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
+    <gap:plugin name="com.phonegap.plugins.childbrowser"/>
 
     <feature name="http://api.phonegap.com/1.0/device" />
+    <feature name="debug-server" required="true">
+       <param name="domain" value="http://debug.phonegap.com"/>
+       <param name="key" value="willoughby"/>
+    </feature>↵
 
-    <preference name="phonegap-version" value="2.7.0" />
+    <access origin="*" />
+
+    <preference name="phonegap-version" value="2.9.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
-    <preference name="webviewbounce"    value="true" />
+    <preference name="webviewbounce"    value="false" />
 
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
