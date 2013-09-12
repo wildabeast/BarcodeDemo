@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
+        id        = "com.phonegap.ryanw.barcodescanner"
         version   = "2.0.0">
     <name>Scanner Demo</name>
 
@@ -14,15 +14,12 @@
     </author>
 
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
-    <gap:plugin name="com.phonegap.plugins.childbrowser"/>
 
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="debug-server" required="true">
        <param name="domain" value="http://debug.phonegap.com"/>
        <param name="key" value="willoughby"/>
-    </feature>↵
-
-    <access origin="*" />
+    </feature>
 
     <preference name="phonegap-version" value="2.9.0" />
     <preference name="orientation"      value="default" />
@@ -55,4 +52,6 @@
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
+
+    <!-- content src="http://www.w3.org/2010/05/video/mediaevents.html" / -->
 </widget>
