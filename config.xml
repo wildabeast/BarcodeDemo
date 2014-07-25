@@ -13,7 +13,7 @@
         PhoneGap Team
     </author>
 
-    <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
+    <gap:plugin name="com.phonegap.plugins.barcodescanner" version="1.2.0" />
 
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="debug-server" required="true">
@@ -21,7 +21,7 @@
        <param name="key" value="willoughby"/>
     </feature>
 
-    <preference name="phonegap-version" value="2.9.0" />
+    <preference name="phonegap-version" value="3.5.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
