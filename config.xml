@@ -21,7 +21,7 @@
        <param name="key" value="willoughby"/>
     </feature>
 
-    <preference name="phonegap-version" value="3.5.0" />
+    <preference name="phonegap-version" value="3.6.3" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
@@ -51,6 +51,11 @@
     <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
     <gap:splash src="res/screen/ios/screen-ipad-portrait.png"      gap:platform="ios"     width="768" height="1024" />
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"     gap:platform="ios"     width="1024" height="768" />
+
+    <gap:splash src="res/screen/ios/Default-667h@2x.png"     gap:platform="ios"     width="750" height="1334" />
+    <gap:splash src="res/screen/ios/Default-Portrait-736h@3x.png"     gap:platform="ios"     width="1242" height="2208" />
+    <gap:splash src="res/screen/ios/Default-Landscape-736h@3x.png"     gap:platform="ios"     width="2208" height="1242" />
+
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
 
     <!-- content src="http://www.w3.org/2010/05/video/mediaevents.html" / -->
