@@ -25,7 +25,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <title>Barcode Scanner Demo</title>
     </head>
-    <body>
+    <body class="platform-ios platform-cordova platform-webview">
         <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
@@ -33,7 +33,10 @@
                 <p class="event received">Device is Ready</p>
             </div>
             <p><a href="#" class="topcoat-button" id="scan">SCAN</a></p>
-            <p><a href="#" class="topcoat-button" id="encode">ENCODE</a></p>
+            <div id="qr_encoder">
+            <p><a href="#" class="topcoat-button" id="encode">ENCODE</a></p>            
+            <textarea rows ="8" cols="30" id="textToEncode">Enter text to encode to qr code!</textarea>            
+            </div>
             <p id="info"></p>
             <h2>OPENING LINKS:</h2>
             <p><a href="#" class="topcoat-button" onclick="window.open('http://www.nhl.com', '_blank', 'location=yes');">InAppBrowser</a></p>
