@@ -13,15 +13,9 @@
         PhoneGap Team
     </author>
 
-    <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
+    <plugin name="phonegap-plugin-barcodescanner"/>
 
-    <feature name="http://api.phonegap.com/1.0/device" />
-    <feature name="debug-server" required="true">
-       <param name="domain" value="http://debug.phonegap.com"/>
-       <param name="key" value="willoughby"/>
-    </feature>
-
-    <preference name="phonegap-version" value="cli-6.4.0" />
+    <preference name="phonegap-version" value="cli-6.5.0" />
     <preference name="orientation"      value="default" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
