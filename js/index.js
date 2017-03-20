@@ -19,7 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+        this.bindEvents();        
     },
     // Bind Event Listeners
     //
@@ -82,14 +82,32 @@ var app = {
 
     encode: function() {
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+        var textToEncode = document.getElementById("textToEncode").value;
+        var qr_encode_div = document.getElementById("qr_encoder");
+        var qrImgTag = "qrcode";
 
-        scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.nhl.com", function(success) {
-            alert("encode success: " + success);
+        scanner.encode(scanner.Encode.TEXT_TYPE, textToEncode, function(success) {
+               var img = document.getElementById("qrcode");
+        
+               if(img != null){
+                  img.src = success.file + "?lastmod=" + (Date.now() / 1000 | 0);               
+               }
+               else{
+                  img = document.createElement("img");
+                  img.setAttribute("id", qrImgTag);
+                  img.setAttribute("height", "250");
+                  img.setAttribute("width", "250");
+                  img.src = success.file + "?lastmod=" + (Date.now() / 1000 | 0);
+                  qr_encode_div.appendChild(img);
+               }
+              
           }, function(fail) {
-            alert("encoding failed: " + fail);
+              var qrImg = document.getElementById(qrImgTag);
+              if(qrImg != null)
+                 qr_encode_div.removeChild(qrImg);
+              alert("encoding failed: " + fail);
+                    
           }
         );
-
     }
-
 };
